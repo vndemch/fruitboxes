@@ -2,8 +2,6 @@ package my.fruitbox;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
 public class Box<T extends Fruit> {
     private int num;
@@ -14,8 +12,6 @@ public class Box<T extends Fruit> {
         this.num = box.size();
 
     }
-
-    //public T[] getBox() {return box.;}
 
     public void addItem (T... fruits) {
         System.out.println("Добавляем в коробку: "+fruits.length);
