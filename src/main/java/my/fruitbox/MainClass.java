@@ -20,7 +20,7 @@ public class MainClass {
 
 
 
-        System.out.println("oranges Первый ящик: "+orangeBox1.getNum()+" с массой "+(orangeBox1.getNum()*orange.getNet()));
+        System.out.println("\n oranges Первый ящик: "+orangeBox1.getNum()+" с массой "+(orangeBox1.getNum()*orange.getNet()));
         orangeBox1.addItem(orange,orange);
         System.out.println("oranges Первый ящик: "+orangeBox1.getNum()+" с массой "+(orangeBox1.getNum()*orange.getNet()));
     }

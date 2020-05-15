@@ -1,28 +1,41 @@
 package my.fruitbox;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 public class Box<T extends Fruit> {
     private int num;
-    private T[] box;
+    private ArrayList<T> box;
 
     public Box(T... fruits) {
-        this.num = fruits.length;
+        box = new ArrayList<>(Arrays.asList(fruits));
+        this.num = box.size();
+
     }
 
-    public T[] getBox() {
-        return box;
-    }
+    //public T[] getBox() {return box.;}
 
     public void addItem (T... fruits) {
-        this.num += fruits.length;
+        System.out.println("Добавляем в коробку: "+fruits.length);
+    box.addAll(Arrays.asList(fruits));
+    this.num = box.size();
     }
 
     public int getNum () {
         return this.num;
     }
 
-    public void setEmpty () { this.num = 0; }
+    public void setEmpty () { box.clear(); this.num = 0; }
 
     public void fromAnotherBox (Box<T> anotherBox) {
+        if (box == anotherBox.box) {
+            System.out.println("Это одна коробка");
+            return;
+        }
+        System.out.println("Перекладываем в коробку: " +anotherBox.box.size()+ " единиц");
+        box.addAll(anotherBox.box);
         this.num += anotherBox.getNum();
         anotherBox.setEmpty();
     }
